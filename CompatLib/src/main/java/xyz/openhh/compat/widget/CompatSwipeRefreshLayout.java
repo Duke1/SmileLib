@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The Android Open Source Project
+ * Copyright 2015 HH
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -111,8 +111,7 @@ public class CompatSwipeRefreshLayout extends ViewGroup implements NestedScrolli
         }
 
 
-        mRefreshLayout = (RelativeLayout) LayoutInflater.from(context).inflate(R.layout.compat_swipe_refresh_layout, null, false);
-        mRefreshLayout.setBackgroundColor(Color.WHITE);
+        mRefreshLayout = new RelativeLayout(context);
         ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, 0);
         addView(mRefreshLayout, lp);
 

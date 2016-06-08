@@ -8,4 +8,9 @@
             <flag name="pullUp" value="4"/>
         </attr>
     </declare-styleable>
+
+
+    <declare-styleable name="GalleryView">
+        <attr name="card_width" format="integer|reference|dimension"/>
+    </declare-styleable>
 </resources>
