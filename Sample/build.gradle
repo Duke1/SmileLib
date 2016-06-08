@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "xyz.openhh"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+
+//        jackOptions {
+//            enabled true
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions{
+        javaMaxHeapSize "2g"
+    }
+
+//    compileOptions {
+//        targetCompatibility 1.8
+//        sourceCompatibility 1.8
+//    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':compatlib')
+
+
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.facebook.fresco:fresco:0.9.0+'
+    //https://github.com/futuresimple/android-floating-action-button
+    compile 'com.getbase:floatingactionbutton:1.10.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'com.android.support:palette-v7:23.3.0'
+}

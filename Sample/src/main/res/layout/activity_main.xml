@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/app_background">
+    <!--Main -->
+    <RelativeLayout
+        android:id="@+id/main_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_transparent_30p">
+
+
+        <LinearLayout
+            android:id="@+id/head_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/menu_switch"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:paddingBottom="19dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="19dp"
+                android:src="@mipmap/menu_btn" />
+
+            <TextView
+                android:id="@+id/fundation_name"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="功能名称"
+                android:textColor="@color/white"
+                android:textSize="@dimen/app_text_size_xlarge" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_function_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/head_bar_layout"
+            android:layout_marginTop="@dimen/span_space" />
+
+
+    </RelativeLayout>
+
+
+    <!--Left menu-->
+    <fragment
+        android:id="@+id/left_menu"
+        android:name="xyz.openhh.fragment.MainMenuFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_marginRight="13dp" />
+</android.support.v4.widget.DrawerLayout>

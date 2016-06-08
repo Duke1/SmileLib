@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fresco="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_img"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            fresco:actualImageScaleType="centerInside"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="#00ffffff"
+            fresco:roundingBorderWidth="0dp"/>
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:ellipsize="end"
+            android:gravity="bottom|center_horizontal"
+            android:paddingLeft="@dimen/span_space"
+            android:paddingRight="@dimen/span_space"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_text_size_large"/>
+
+        <TextView
+            android:id="@+id/tv_mail"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:gravity="top|center_horizontal"
+            android:paddingLeft="@dimen/span_space"
+            android:paddingRight="@dimen/span_space"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/app_text_size_small"/>
+    </LinearLayout>
+
+    <!--menu item -->
+
+    <TextView
+        android:id="@+id/archives_manage_label"
+        style="@style/MenuListItemStyle"
+        android:text="@string/archives_manage_label_str"/>
+
+    <TextView
+        android:id="@+id/contract_manage_label"
+        style="@style/MenuListItemStyle"
+        android:text="@string/contract_manage_label_str"/>
+
+    <TextView
+        android:id="@+id/synchronization_label"
+        style="@style/MenuListItemStyle"
+        android:text="@string/synchronization_label_str"/>
+
+    <TextView
+        android:id="@+id/help_center"
+        style="@style/MenuListItemStyle"
+        android:text="文档帮助"/>
+
+
+    <TextView
+        android:id="@+id/about"
+        style="@style/MenuListItemStyle"
+        android:text="关于"/>
+
+
+    <!--login out-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/exit"
+            style="@style/MenuListItemStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/span_space"
+            android:text="退出"
+            android:textColor="#ec0d0d"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/login"
+            style="@style/MenuListItemStyle"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/span_space"
+            android:text="登录"/>
+    </RelativeLayout>
+</LinearLayout>
