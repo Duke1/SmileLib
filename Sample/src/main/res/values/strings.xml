@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wind</string>
+    <string name="app_name">SmileSample</string>
 
     <string name="archives_manage_label_str">档案管理</string>
     <string name="contract_manage_label_str">合同管理</string>
