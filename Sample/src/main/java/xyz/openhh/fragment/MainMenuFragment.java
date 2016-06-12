@@ -16,6 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import xyz.openhh.R;
+import xyz.openhh.activity.HelpActivity;
 import xyz.openhh.activity.MainActivity;
 
 /**
@@ -74,10 +75,9 @@ public class MainMenuFragment extends BaseFragment {
 
     @OnClick(R.id.help_center)
     protected void onHelpCenterClick(View view) {
-        if (null != mMainActivity) {
-            mMainActivity.setFundationName("文档帮助");
-            mMainActivity.openFundationFragment(new HelperDocFragment(), null);
-        }
+
+
+        HelpActivity.launch(mMainActivity);
     }
 
 

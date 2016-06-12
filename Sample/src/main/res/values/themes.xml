@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="BaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/app_tertiary</item>
         <item name="colorPrimary">@color/app_tertiary</item>
         <item name="colorAccent">@color/app_tertiary</item>
@@ -14,13 +14,12 @@
         <item name="android:textColorTertiary">@color/white</item>
 
     </style>
-    <style name="NoActionBarTheme" parent="BaseTheme">
+
+
+    <style name="DefaultTheme" parent="BaseTheme">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-
-
-    <style name="DefaultTheme" parent="BaseTheme"></style>
 </resources>

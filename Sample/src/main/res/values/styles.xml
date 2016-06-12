@@ -93,4 +93,21 @@
         <item name="android:textColorHint">@color/hint_gray</item>
         <item name="android:textSize">15sp</item>
     </style>
+
+
+    <!--Tabs style-->
+    <style name="SampleTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabMaxWidth">300dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <item name="tabPaddingStart">0dp</item>
+        <item name="tabPaddingEnd">0dp</item>
+        <item name="tabBackground">@color/hint_gray</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:fillViewport">true</item>
+        <item name="tabMode">fixed</item>
+    </style>
 </resources>
