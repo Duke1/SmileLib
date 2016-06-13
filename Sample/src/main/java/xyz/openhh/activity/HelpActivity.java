@@ -57,6 +57,7 @@ public class HelpActivity extends BaseActivity {
         });
 
 
+
         headTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         headTabLayout.addTab(headTabLayout.newTab().setText("Tab1"));
 
