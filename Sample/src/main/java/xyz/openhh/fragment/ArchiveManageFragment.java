@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.AddFloatingActionButton;
 
@@ -84,6 +85,11 @@ public class ArchiveManageFragment extends BaseFragment {
                         layout.closeRefreshBoard();
                     }
                 }, 5000);
+            }
+
+            @Override
+            public void onLoadMore(CompatSwipeRefreshLayout layout) {
+                Toast.makeText(mActivity, "加载更多", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -219,29 +219,51 @@ public class CompatSwipeRefreshLayout extends ViewGroup implements NestedScrolli
 
         final int action = MotionEventCompat.getActionMasked(event);
 
-        if (canChildScrollUp() || !hasMode(MODE_PULL_DOWN) || REFRESHING == mCurPullState) {
-            return false;
-        }
-
-
         switch (action) {
+
             case MotionEvent.ACTION_DOWN:
                 mActivePointerId = MotionEventCompat.getPointerId(event, 0);
-                mIsBeingDragged = false;
                 final float initialDownY = getMotionEventY(event, mActivePointerId);
                 if (initialDownY == -1) {
                     return false;
                 }
                 mStartY = initialDownY;
                 break;
+
+            case MotionEvent.ACTION_CANCEL:
+            case MotionEvent.ACTION_UP: {
+
+                if (!canChildScrollDown() && hasMode(MODE_PULL_UP)) {
+                    final float y = getMotionEventY(event, mActivePointerId);
+                    if (y == -1) {
+                        return false;
+                    }
+                    final float deltaY = y - mStartY;
+                    if (Math.abs(deltaY) > mTouchSlop) {
+                        if (null != mListener) mListener.onLoadMore(this);
+                    }
+                }
+            }
+            break;
+        }
+
+        if (canChildScrollUp() || !hasMode(MODE_PULL_DOWN) || REFRESHING == mCurPullState) {
+            return false;
+        }
+
+        switch (action) {
+
+            case MotionEvent.ACTION_DOWN:
+                mIsBeingDragged = false;
+                break;
+
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
 
                 mIsBeingDragged = false;
                 mActivePointerId = INVALID_POINTER;
-                break;
-            case MotionEvent.ACTION_MOVE:
 
+            case MotionEvent.ACTION_MOVE:
                 if (mActivePointerId == INVALID_POINTER) {
                     Log.e(LOG_TAG, "Got ACTION_MOVE event but don't have an active pointer id.");
                     return false;
@@ -369,9 +391,25 @@ public class CompatSwipeRefreshLayout extends ViewGroup implements NestedScrolli
     }
 
 
+    /**
+     * 能否下拉
+     *
+     * @return
+     */
     private boolean canChildScrollUp() {
 
         return ViewCompat.canScrollVertically(mTargetView, -1);
+
+    }
+
+    /**
+     * 能否上拉
+     *
+     * @return
+     */
+    private boolean canChildScrollDown() {
+
+        return ViewCompat.canScrollVertically(mTargetView, 1);
 
     }
 
@@ -430,6 +468,8 @@ public class CompatSwipeRefreshLayout extends ViewGroup implements NestedScrolli
 
     public interface Listener {
         void onRefresh(CompatSwipeRefreshLayout layout);
+
+        void onLoadMore(CompatSwipeRefreshLayout layout);
     }
 
 

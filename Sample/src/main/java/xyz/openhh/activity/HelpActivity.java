@@ -54,6 +54,11 @@ public class HelpActivity extends BaseActivity {
                     }
                 }, 5000);
             }
+
+            @Override
+            public void onLoadMore(CompatSwipeRefreshLayout layout) {
+
+            }
         });
 
 
